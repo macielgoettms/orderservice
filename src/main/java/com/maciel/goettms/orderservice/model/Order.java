@@ -1,20 +1,17 @@
 package com.maciel.goettms.orderservice.model;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Getter
-@Setter
 @Entity
-public class Order {
+@Table(name = "order", schema = "public")
+@Data
+public class Order implements Serializable {
 
-    @EqualsAndHashCode.Include
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,7 +20,7 @@ public class Order {
     @Size(max = 128)
     private String description;
 
-    @ManyToMany
+    @ManyToOne
     private Equipment equipment;
 
     @Size(max = 256)

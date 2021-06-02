@@ -17,9 +17,9 @@ public class SaveOrderService {
     private SaveEquipmentService saveEquipmentService;
 
     public Order save(Order order) {
-        if (order.getEquipment().getId()==null) {
+/*        if (order.getEquipment().getId()==null) {
            order.getEquipment().setId(saveEquipmentService.save(order.getEquipment()).getId());
-        }
+        }*/
 
         return orderRepository.save(order);
     }
