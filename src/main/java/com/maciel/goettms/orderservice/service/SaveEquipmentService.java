@@ -16,10 +16,10 @@ public class SaveEquipmentService {
     private CustomerRepository customerRepository;
 
     public Equipment save (Equipment equipment) {
-       /* if (equipment.getCustomer().getId() == null) {
+        if (equipment.getCustomer().getId() == null) {
             equipment.getCustomer().setId(customerRepository.save(equipment.getCustomer()).getId());
         }
-*/
+
         return  equipmentRepository.save(equipment);
     }
 }

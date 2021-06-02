@@ -35,7 +35,8 @@ public class OrderServiceController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Order adicionar(@Valid @RequestBody Order order) {
+    public Order adicionar(@RequestBody Order order) {
+
         return saveOrderService.save(order);
     }
 
