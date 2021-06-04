@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "order", schema = "public")
@@ -28,5 +29,7 @@ public class Order implements Serializable {
 
     @Size(max = 256)
     private String solution;
+
+    private Timestamp estimated;
 
 }
